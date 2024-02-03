@@ -7,7 +7,7 @@ module.exports.index=async(req,res)=>{
   };
   module.exports.showlisting=async(req,res)=>{
     let {id}=req.params;
-    const details=await listing.findById(id).populate({
+    let details=await listing.findById(id).populate({
       path:"review",
       
       populate:{

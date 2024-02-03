@@ -23,7 +23,7 @@ router
 router.get("/category/:cat",wrapAsync(listingController.category));
 
   //show
-  router.get("/detail/:id",wrapAsync(listingController.showlisting))
+  router.get("/show/:id",wrapAsync(listingController.showlisting))
   //add lsiting
   router.get("/add",isLogIn,(req,res)=>{
    
