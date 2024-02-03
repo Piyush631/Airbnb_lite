@@ -1,0 +1,160 @@
+
+<% layout("/layouts/boilerplate") %>
+<style>
+  .filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+  
+  }
+  .filter{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   margin-top: 1.3rem;
+   margin-right: 2.5rem;
+   opacity: 0.5;
+
+  }
+  .filter:hover{
+    opacity: 1;
+  }
+  .tax-info{
+    display: none;
+  }
+  .tax-switch{
+    border: 0.1rem solid;
+    border-radius: 1rem;
+    height:2.7rem;
+    width:10rem;
+    text-align: center;
+    padding-top: 0.4rem;
+    padding-left: 0.2rem;
+    margin-top: 1rem;
+    background-color: rgb(255, 255, 255);
+  }
+.rm-btn{
+  text-decoration: none;
+  border: none;
+  background-color: white;
+
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+</style>
+
+
+<div class="filters">
+  <div class="filter">
+    <i class="fa-solid fa-fire"></i>
+  <a href="/listing"><div class="filtername">Trending</div></a>
+
+    
+  </div>
+  <div class="filter">
+   
+      <i class="fa-solid fa-bed"></i>
+      <form method="get" action="/listing/category/rooms">
+    <button class="rm-btn"><div class="filtername">Rooms</div></button>  
+    </form>
+   
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-hotel"></i>
+    <form method="get" action="/listing/category/hotels">
+   <button class="rm-btn"><div class="filtername">Hotels</div></button> 
+  </form>
+  </div>
+  <div class="filter">
+    <form method="get" action="/listing/category/beaches">
+    <button class="rm-btn"> <i class="fa-solid fa-umbrella-beach"></i>
+  
+   
+    <div class="filtername">Beach</div></button>
+    </form>
+  </div>
+  <div class="filter">
+    <form method="get" action="/listing/category/mountains">
+   <button class="rm-btn"><i class="fa-solid fa-mountain-city"></i>
+    <div class="filtername">Mountains</div> </button> 
+    </form>
+  </div>
+  <div class="filter">
+    <form method="get" action="/listing/category/boathouse">
+    <button class="rm-btn"><i class="fa-solid fa-house-flood-water"></i>
+      <div class="filtername">Boat House</div></button>
+    </form>
+  </div>
+  <div class="filter">
+    <form method="get" action="/listing/category/snowignu">
+    <button class="rm-btn"><i class="fa-solid fa-igloo"></i>
+      <div class="filtername">Snow ignu</div></button>
+    </form>
+  </div>
+  
+  <div class="filter">
+    <form method="get" action="/listing/category/campign">
+    <button class="rm-btn"><i class="fa-solid fa-tents"></i>
+      <div class="filtername">Campign</div></button>
+    </form>
+  </div>
+ 
+    <div class="form-check-reverse form-switch tax-switch">
+    
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Display  taxes </label>
+    </div>
+
+</div>
+
+
+<br>
+  <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 ">
+  <% for(list of alllisting) { %>
+    <a href="http://localhost:4020/listing/show/<%=list.id%>" class="card-listing">  
+      <div class="card col card-listing-border" style="width: 17.8rem;">
+    <img src="<%=list.image.url%>" class="card-img-top" alt="..." style="height: 17.8rem;">
+    <div class="card-img-overlay"></div>
+    <div class="card-body">
+      <p class="card-text"> 
+     <b>   <%=list.location%>,<%=list.country%></b><br>
+     <%=list.title%><br>
+       &#8377; <%=list.price%>/night
+       <i class="tax-info"> &nbsp; +18GST</i>
+        
+      </p>
+    </div>
+  </div>
+  </a>
+  <% } %>  
+</div>
+<script>
+  let taxswitch=document.getElementById("flexSwitchCheckDefault");
+ 
+  taxswitch.addEventListener("click",()=>{
+    let tax=document.getElementsByClassName("tax-info");
+for(info of tax)
+{
+  if(info.style.display != "inline")
+  {
+    info.style.display="inline";
+  }
+  else{
+    info.style.display="none";
+  }
+}
+    console.log(tax);
+  });
+</script>
+
+    
+
+
+
+ 
+
+

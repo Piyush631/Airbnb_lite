@@ -1,0 +1,108 @@
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+   min-height:100vh ;
+}
+.container{
+flex:1;
+}
+.fa-campus{
+    color:#fe424d;
+    font-size:2rem; 
+}
+.nav-link{
+    color:#222222 !important;
+}
+.navbar{
+    height:4.5rem;
+    background-color: white;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+
+.f-info{
+    display: flex;
+    height:7.5rem;
+    background-color: rgb(221, 216, 216);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+}
+.f-info-links{
+    width:100%;
+    font-size:1rem;
+}
+.f-socials{
+    width: 100%;
+    margin-top: 1rem;
+}
+.f-data{
+width:100%;
+margin-top: 0.7rem;
+text-decoration: none;
+color: #222222;
+font-size:1rem;
+}
+.f-socials i{
+    color: #222222;
+    text-decoration: none;
+    margin-right:1rem;
+    font-size:1.2rem;
+}
+/* card */
+.card-listing-border{
+    border:none  !important;
+    margin-bottom: 2rem;
+    padding: 0.7rem;
+  
+}
+.card-img-top
+{
+    border-radius: 1rem !important;
+    width:100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text p{
+    font-weight: 400 !important;
+
+
+}
+.card-listing{
+    text-decoration: none !important ;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: aliceblue;
+}
+.btn-dark{
+    background-color: #fe424d !important;
+border-style: none !important;
+}
+/*  show detal*/
+.show-img{
+    height:35vh;
+}
+.edit-btn{
+    display: flex !important; 
+    gap:10px;
+}
+.delete-btn-color{
+    background-color: #222222 !important;
+   border:1px solid #222222 !important;
+}
+.del-btn{
+    background-color: #222222 !important;
+    margin-bottom:2%;
+}

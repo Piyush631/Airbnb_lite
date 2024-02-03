@@ -1,0 +1,69 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+  <div class="row">
+    <div class="col-8  offset-2">
+   
+    <h1>Edit you Listing</h1>
+    <form method="post" action="/listing/<%=edit._id%>?_method=put" novalidate class="needs-validation" enctype="multipart/form-data"> 
+      <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" required name="listing[title]" value="<%=edit.title%>">
+        <div class="invalid-feedback">
+          Choose a title 
+         </div>
+      </div>
+   <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea name="listing[description]"class="form-control" rows="4" cols="20"><%=edit.description%></textarea>
+   </div>
+   <div class="mb-3">
+    <label for="img preview">orignal image</label>
+    <img  src="<%=originalurl%>" class="card-img-top" alt="..." style="height: 17.8rem;" >
+   </div>
+   <div class="mb-3">
+    <label for="img">Upload image:</label>
+    <input type="file" id="img" name="listing[image]" accept="image/*">
+   </div>
+      
+      
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" name="listing[price]" value="<%=edit.price%>">
+      </div>
+      <div class="mb-3 col-md-8">
+        <label for="cat egory" class="form-label">category</label>
+       
+        <select name="listing[category]" class="form-control" value="<%=edit.category%>">
+          <option value="mountains">mountains</option>
+          <option value="beaches">beaches</option>
+          <option value="trending">trending</option>
+          <option value="rooms">rooms</option>
+          <option value="campign">campign</option>
+          <option value="snowignu">snowignu</option>
+          <option value="boathouse">boathouse</option>
+        </select>
+            
+    </div>
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" class="form-control" required name="listing[location]" value="<%=edit.location%>">
+          <div class="invalid-feedback">
+            Enter a valid Location
+           </div>
+        </div>
+       <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" class="form-control"  required name="listing[country]" value="<%=edit.country%>">
+        <div class="invalid-feedback">
+          Enter a valid Country
+         </div>
+       </div> 
+        
+
+    <button class="btn btn-dark">Edit</button><br><br><br>
+</form>
+</div>
+</div> 
+  
+    
+
