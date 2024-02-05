@@ -24,7 +24,7 @@
   
   <% if(currUser && currUser._id.equals(own._id)) { %>
     <div class="edit-btn">
-      <a href="http://localhost:4020/listing/<%=details.id%>/edit" class="btn btn-dark">Edit</a>
+      <a href="https://airbnb-lite.onrender.com/listing/<%=details.id%>/edit" class="btn btn-dark">Edit</a>
   <form method="post" action="/listing/<%=details._id%>?_method=delete">
       <button class="btn btn-danger delete-btn-color">Delete</button>
     
