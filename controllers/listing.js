@@ -94,7 +94,8 @@ module.exports.addlisting=async (req,res,next)=>{
  //search
  module.exports.searchlisting=async(req,res)=>{
   let {search}=req.query;
-  const  alllisting= await listing.find({"location":search});
+  const  alllisting= await listing.find({"location":search } );
+  
   res.render("show.ejs",{alllisting});
   
 }

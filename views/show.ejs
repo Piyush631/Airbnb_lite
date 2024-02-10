@@ -21,7 +21,7 @@
   .filter:hover{
     opacity: 1;
   }
-  .tax-info{
+  .tax-information{
     display: none;
   }
   .tax-switch{
@@ -120,11 +120,7 @@ a{
       </form>
     </div>
    
-      <div class="form-check-reverse form-switch tax-switch">
-      
-        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Display  taxes </label>
-      </div>
+     
   </ul>
 </div>
 
@@ -202,7 +198,7 @@ a{
      <b>   <%=list.location%>,<%=list.country%></b><br>
      <%=list.title%><br>
        &#8377; <%=list.price%>/night
-       <i class="tax-info"> &nbsp; +18GST</i>
+       <i class="tax-information"> &nbsp; +18GST</i>
         
       </p>
     </div>
@@ -211,13 +207,12 @@ a{
   <% } %>  
 </div>
 
-
 <script>
   
   let taxswitch=document.getElementById("flexSwitchCheckDefault");
  
   taxswitch.addEventListener("click",()=>{
-    let tax=document.getElementsByClassName("tax-info");
+    let tax=document.getElementsByClassName("tax-information");
 for(info of tax)
 {
   if(info.style.display != "inline")
@@ -228,14 +223,10 @@ for(info of tax)
     info.style.display="none";
   }
 }
-    console.log(tax);
+  
   });
 
 </script>
-    
-  
-  
-
 
 
 
