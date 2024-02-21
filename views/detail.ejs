@@ -22,7 +22,7 @@
             </div>
           </div>
   
-  <% if(currUser === details.owner.username ) { %>
+  <% if(currUser) { %>
     <div class="edit-btn">
       <a href="https://airbnb-lite.onrender.com/listing/<%=details.id%>/edit" class="btn btn-dark">Edit</a>
   <form method="post" action="/listing/<%=details._id%>?_method=delete">
